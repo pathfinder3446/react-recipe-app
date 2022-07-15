@@ -1,6 +1,6 @@
 import { HeaderText, HomeImg, ImgDiv } from './Home.style';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../../components/header/Header';
 import Cards from '../../components/cards/Cards';
 import homeSvg from "../../assets/home.svg";
@@ -29,8 +29,12 @@ const Home = () => {
     } else {
       alert('Please Enter Your Meal')
     }
-    
+  
   };
+
+  useEffect(() => {
+    getData(recipes)
+  }, []);
 
   return (
     <div>
